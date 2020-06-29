@@ -21,17 +21,17 @@ class MainContainer extends Component {
       });
   }
 
-  addStock = (id) => {
-    if (!this.state.portfolio.find((portfolioId) => portfolioId === id)) {
+  addStock = (stock) => {
+    if (!this.state.portfolio.includes(stock)) {
       this.setState({
-        portfolio: [...this.state.portfolio, id],
+        portfolio: [...this.state.portfolio, stock],
       });
     }
   };
 
-  removeStock = (id) => {
+  removeStock = (stock) => {
     this.setState({
-      portfolio: this.state.portfolio.filter((stock) => stock !== id),
+      portfolio: this.state.portfolio.filter((pStock) => pStock !== stock),
     });
   };
 
